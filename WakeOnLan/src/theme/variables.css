@@ -1,0 +1,56 @@
+/* For information on how to create your own theme, please refer to:
+http://ionicframework.com/docs/theming/ */
+:root {
+  --app-bg: #f3f4f6;
+  --app-surface: #ffffff;
+  --app-border: #e2e5ea;
+  --app-text: #1f2933;
+  --app-text-muted: #6b7280;
+
+  --app-primary: #2563eb;
+  --app-primary-hover: #1d4ed8;
+  --app-primary-soft: #eff4ff;
+  --app-success: #16a34a;
+  --app-warning: #d97706;
+  --app-danger: #dc2626;
+  --app-danger-soft: #fef2f2;
+  --app-neutral: #374151;
+
+  --app-radius: 12px;
+  --app-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+ion-content {
+  --background: var(--app-bg);
+}
+
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../theme/Fonts/Nunito-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Nunito-B';
+  src: url('../theme/Fonts/Nunito-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito-EB';
+  src: url('../theme/Fonts/Nunito-ExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../theme/Fonts/Roboto-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

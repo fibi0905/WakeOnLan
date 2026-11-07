@@ -1,0 +1,70 @@
+/* ---------------- Header ---------------- */
+.Header {
+    background: var(--app-surface);
+    color: var(--app-text);
+    font-family: 'Nunito-B';
+    border-bottom: 1px solid var(--app-border);
+}
+
+.Header::after {
+    display: none; /* toglie l'ombra di default di Ionic */
+}
+
+.HeaderGrid {
+    display: grid;
+    grid-template-columns: 64px 1fr 64px;
+    align-items: center;
+    height: 60px;
+}
+
+.HeaderTitle {
+    grid-area: 1 / 2 / 2 / 3;
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--app-text);
+}
+
+.HTmoblie {
+    font-size: 1.1rem;
+}
+
+.HeaderIconLan,
+.HeaderIconPlus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.HeaderIconLan  { grid-area: 1 / 1 / 2 / 2; }
+.HeaderIconPlus { grid-area: 1 / 3 / 2 / 4; }
+
+.HeaderIcon {
+    font-size: 26px;
+    color: var(--app-text-muted);
+}
+
+.HImoblie {
+    font-size: 24px;
+}
+
+/* il "+" è l'unica azione del header: unico elemento colorato */
+.HeaderIconPlus .HeaderIcon {
+    padding: 8px;
+    border-radius: 10px;
+    color: var(--app-primary);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.HeaderIconPlus .HeaderIcon:hover {
+    background: var(--app-primary-soft);
+}
+
+/* ---------------- Lista ---------------- */
+.CardConteiner {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 16px;
+}

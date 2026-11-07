@@ -1,0 +1,139 @@
+/* ------- CARD ------- */
+.CardGrid {
+    display: grid;
+    grid-template-columns: 64px 1fr 64px;
+    grid-template-rows: 72px 0fr; /* chiusa: la seconda riga ha altezza 0 */
+    background: var(--app-surface);
+    border: 1px solid var(--app-border);
+    border-radius: var(--app-radius);
+    overflow: hidden;
+    margin: 0 0 12px 0;
+    transition: grid-template-rows 0.3s ease, box-shadow 0.2s ease;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.CardGrid:hover {
+    box-shadow: var(--app-shadow);
+}
+
+.CardGrid.open {
+    grid-template-rows: 72px 1fr; /* aperta: altezza = contenuto, niente vh fissi */
+}
+
+/* ------- PRIMA RIGA ------- */
+.IconPc {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Label {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.Option {
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 22px;
+}
+
+.IconPc .icon {
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--app-primary-soft);
+    color: var(--app-primary);
+}
+
+.Option .icon {
+    padding: 8px;
+    border-radius: 10px;
+    color: var(--app-text-muted);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.Option:hover .icon {
+    background: #f3f4f6;
+    color: var(--app-text);
+}
+
+.label {
+    color: var(--app-text);
+    font-family: 'Nunito-EB';
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ------- SECONDA RIGA: contenuto espanso ------- */
+.CardContent {
+    grid-area: 2 / 1 / 3 / 4;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, padding 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.CardGrid.open .CardContent {
+    padding: 4px 16px 16px 16px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease 0.15s, padding 0.3s ease, visibility 0s;
+}
+
+/* ------- BOTTONI ------- */
+.Botton {
+    flex: 1 1 140px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 10px;
+    font-family: 'Nunito-EB';
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, filter 0.2s ease, transform 0.1s ease;
+}
+
+.Botton:hover  { filter: brightness(0.94); }
+.Botton:active { transform: scale(0.98); }
+
+.Botton ion-icon {
+    font-size: 1.15em;
+}
+
+.mobileB {
+    flex-basis: 100%;
+}
+
+.power  { background-color: var(--app-primary); color: #fff; }
+.off    { background-color: var(--app-neutral); color: #fff; }
+.on     { background-color: var(--app-success); color: #fff; }
+.active { background-color: var(--app-warning); color: #fff; }
+.delete { background-color: var(--app-danger);  color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+    .CardGrid,
+    .CardContent,
+    .CardGrid.open .CardContent,
+    .Botton {
+        transition: none;
+    }
+}

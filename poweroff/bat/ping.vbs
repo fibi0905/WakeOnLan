@@ -1,0 +1,1 @@
+CreateObject("WScript.Shell").Run """C:\Program Files\poweroff\bat\ping.bat""", 0, False
